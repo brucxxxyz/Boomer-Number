@@ -181,3 +181,13 @@ button:disabled {
 .dark .lang-menu div:hover {
   background: #444;
 }
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.6;
+  padding: 10px 0;
+  user-select: none;
+}
+
