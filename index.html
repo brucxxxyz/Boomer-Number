@@ -8,9 +8,8 @@
 <body>
 <div class="container">
 
-  <!-- Top-right buttons -->
+  <!-- 顶部按钮 -->
   <div class="top-right">
-    <!-- Language button -->
     <div class="lang-wrapper">
       <button id="langBtn">🌐</button>
       <div id="langMenu" class="lang-menu hidden">
@@ -20,16 +19,27 @@
       </div>
     </div>
 
-    <!-- Theme toggle -->
     <button id="themeToggle">🌙</button>
   </div>
 
   <h1 id="title">💥爆炸数字</h1>
 
-  <!-- Setup -->
+  <!-- 设置区 -->
   <div id="setup">
-    <label id="label-player-count"></label>
-    <select id="playerCount">
+
+    <label id="label-player-count">选择玩家人数</label>
+
+    <!-- 玩家人数按钮组 -->
+    <div id="playerButtons" class="player-buttons">
+      <button data-count="2">2</button>
+      <button data-count="3">3</button>
+      <button data-count="4">4</button>
+      <button data-count="5">5</button>
+      <button data-count="6">6</button>
+    </div>
+
+    <!-- 隐藏的下拉框（逻辑使用） -->
+    <select id="playerCount" class="hidden">
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
@@ -39,35 +49,32 @@
 
     <div id="nameInputs"></div>
 
-    <label id="label-max-number"></label>
+    <label id="label-max-number">最大数字（≥ 人数 × 10）</label>
     <input type="number" id="maxNumber" value="50">
 
-    <button id="startBtn"></button>
+    <button id="startBtn">开始游戏</button>
   </div>
 
-  <!-- Game -->
+  <!-- 游戏区 -->
   <div id="game" class="hidden section">
     <div class="info" id="playerInfo"></div>
     <div class="info" id="rangeInfo"></div>
 
-    <label id="label-guess"></label>
+    <label id="label-guess">请输入数字（范围内部）</label>
     <input type="number" id="guessInput">
-    <button id="guessBtn"></button>
+    <button id="guessBtn">确认数字并开始倒计时</button>
 
     <div class="countdown" id="countdown"></div>
     <div class="info" id="message"></div>
   </div>
 
-  <!-- End -->
+  <!-- 结束区 -->
   <div id="end" class="hidden section">
     <div class="result" id="resultText"></div>
-    <button id="restartBtn"></button>
+    <button id="restartBtn">再来一局</button>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer" id="t_footer">
-    — Designed by BY —
-  </footer>
+  <footer class="footer">— Designed by BY —</footer>
 
 </div>
 
