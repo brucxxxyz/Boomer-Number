@@ -1,4 +1,4 @@
-# 💥 Boomer Number Game
+# 💥 Boomer Number
 
 A fast‑paced, offline‑friendly web game where players take turns guessing numbers within a shrinking range. The twist: the secret number is hidden inside the range, and whoever hits it… **BOOM**.
 
