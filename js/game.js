@@ -1,6 +1,3 @@
-/* ============================
-   全局变量
-============================ */
 let players = [];
 let secret = 0;
 let low = 0;
@@ -8,9 +5,6 @@ let high = 0;
 let current = 0;
 let maxNum = 0;
 
-/* ============================
-   DOM 元素
-============================ */
 const setup = document.getElementById("setup");
 const game = document.getElementById("game");
 const end = document.getElementById("end");
@@ -27,9 +21,7 @@ const countdown = document.getElementById("countdown");
 const message = document.getElementById("message");
 const resultText = document.getElementById("resultText");
 
-/* ============================
-   渲染玩家名字输入框
-============================ */
+/* 渲染玩家名字输入框 */
 function renderNameInputs() {
   nameInputs.innerHTML = "";
   const count = parseInt(playerCount.value);
@@ -51,10 +43,8 @@ function renderNameInputs() {
 playerCount.addEventListener("change", renderNameInputs);
 renderNameInputs();
 
-/* ============================
-   玩家人数按钮组联动
-============================ */
-document.querySelectorAll("#playerButtons button")?.forEach(btn => {
+/* 玩家人数按钮组 */
+document.querySelectorAll("#playerButtons button").forEach(btn => {
   btn.addEventListener("click", () => {
     const count = btn.getAttribute("data-count");
     playerCount.value = count;
@@ -62,9 +52,7 @@ document.querySelectorAll("#playerButtons button")?.forEach(btn => {
   });
 });
 
-/* ============================
-   开始游戏
-============================ */
+/* 开始游戏 */
 document.getElementById("startBtn").onclick = () => {
   const count = parseInt(playerCount.value);
   const need = count * 10;
@@ -78,7 +66,10 @@ document.getElementById("startBtn").onclick = () => {
   players = [];
   for (let i = 0; i < count; i++) {
     let name = document.getElementById(`name${i}`).value.trim();
-    if (!name) name = `玩家${i + 1}`;
+    if (!name) {
+      alert("请填写所有玩家名字");
+      return;
+    }
     players.push(name);
   }
 
@@ -94,9 +85,7 @@ document.getElementById("startBtn").onclick = () => {
   updateUI();
 };
 
-/* ============================
-   更新界面
-============================ */
+/* 更新界面 */
 function updateUI() {
   const L = LANG[currentLang];
 
@@ -111,9 +100,7 @@ function updateUI() {
   message.textContent = "";
 }
 
-/* ============================
-   提交数字
-============================ */
+/* 提交数字 */
 guessBtn.onclick = () => {
   const guess = parseInt(guessInput.value);
   const L = LANG[currentLang];
@@ -129,9 +116,7 @@ guessBtn.onclick = () => {
   startCountdown(guess);
 };
 
-/* ============================
-   倒计时
-============================ */
+/* 倒计时 */
 function startCountdown(guess) {
   let t = (high - low <= maxNum / 3) ? 1 : 3;
   countdown.textContent = t;
@@ -148,9 +133,7 @@ function startCountdown(guess) {
   }, 1000);
 }
 
-/* ============================
-   判断结果
-============================ */
+/* 判断结果 */
 function resolveGuess(guess) {
   const L = LANG[currentLang];
 
@@ -172,9 +155,7 @@ function resolveGuess(guess) {
   updateUI();
 }
 
-/* ============================
-   再来一局
-============================ */
+/* 再来一局 */
 document.getElementById("restartBtn").onclick = () => {
   setup.classList.remove("hidden");
   game.classList.add("hidden");
@@ -183,9 +164,7 @@ document.getElementById("restartBtn").onclick = () => {
   renderNameInputs();
 };
 
-/* ============================
-   语言菜单
-============================ */
+/* 语言菜单 */
 const langBtn = document.getElementById("langBtn");
 const langMenu = document.getElementById("langMenu");
 
@@ -207,9 +186,7 @@ document.addEventListener("click", e => {
   }
 });
 
-/* ============================
-   暗夜模式
-============================ */
+/* 暗夜模式 */
 const themeBtn = document.getElementById("themeToggle");
 
 function applyTheme() {
