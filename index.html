@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>💥爆炸数字</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部右上角按钮区 -->
+  <div class="top-right">
+    <!-- 语言按钮 -->
+    <div class="lang-wrapper">
+      <button id="langBtn">🌐</button>
+      <div id="langMenu" class="lang-menu hidden">
+        <div data-lang="zh">🇨🇳 简体</div>
+        <div data-lang="hk">🇭🇰 粤语</div>
+        <div data-lang="en">🇬🇧 English</div>
+      </div>
+    </div>
+
+    <!-- 暗夜模式按钮 -->
+    <button id="themeToggle">🌙</button>
+  </div>
+
+  <h1 id="title">💥爆炸数字</h1>
+
+  <!-- 设置区 -->
+  <div id="setup">
+    <label id="label-player-count"></label>
+    <select id="playerCount">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+
+    <div id="nameInputs"></div>
+
+    <label id="label-max-number"></label>
+    <input type="number" id="maxNumber" value="50">
+
+    <button id="startBtn"></button>
+  </div>
+
+  <!-- 游戏区 -->
+  <div id="game" class="hidden section">
+    <div class="info" id="playerInfo"></div>
+    <div class="info" id="rangeInfo"></div>
+
+    <label id="label-guess"></label>
+    <input type="number" id="guessInput">
+    <button id="guessBtn"></button>
+
+    <div class="countdown" id="countdown"></div>
+    <div class="info" id="message"></div>
+  </div>
+
+  <!-- 结束区 -->
+  <div id="end" class="hidden section">
+    <div class="result" id="resultText"></div>
+    <button id="restartBtn"></button>
+  </div>
+
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
