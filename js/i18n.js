@@ -1,7 +1,7 @@
 const LANG = {
   zh: {
     title: "💥爆炸数字",
-    playerCount: "玩家人数",
+    playerCount: "选择玩家人数",
     playerName: i => `玩家 ${i} 名字`,
     maxNumber: "最大数字（≥ 人数 × 10）",
     start: "开始游戏",
@@ -16,7 +16,7 @@ const LANG = {
 
   hk: {
     title: "💥爆炸數字",
-    playerCount: "玩家人數",
+    playerCount: "選擇玩家人數",
     playerName: i => `玩家 ${i} 名`,
     maxNumber: "最大數字（≥ 人數 × 10）",
     start: "開始遊戲",
@@ -31,7 +31,7 @@ const LANG = {
 
   en: {
     title: "💥 Boom Number",
-    playerCount: "Number of Players",
+    playerCount: "Select Number of Players",
     playerName: i => `Player ${i} Name`,
     maxNumber: "Max Number (≥ players × 10)",
     start: "Start Game",
