@@ -2,9 +2,17 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+
+  <!-- iPhone 主屏幕图标 -->
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <!-- 禁止缩放（避免 iPhone 输入框放大） -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   <title>💥爆炸数字</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 <div class="container">
 
@@ -47,6 +55,7 @@
       <option value="6">6</option>
     </select>
 
+    <!-- 玩家名字输入区 -->
     <div id="nameInputs"></div>
 
     <label id="label-max-number">最大数字（≥ 人数 × 10）</label>
