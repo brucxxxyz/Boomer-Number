@@ -86,4 +86,4 @@ No server, no build tools, no dependencies.
 
 ---
 
-### — Designed by BY —
+**Designed by BY**
