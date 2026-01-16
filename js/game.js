@@ -142,9 +142,7 @@ document.getElementById("restartBtn").onclick = () => {
   renderNameInputs();
 };
 
-/* -------------------------
-   语言菜单展开/收起
-------------------------- */
+/* Language menu */
 const langBtn = document.getElementById("langBtn");
 const langMenu = document.getElementById("langMenu");
 
@@ -166,9 +164,7 @@ document.addEventListener("click", e => {
   }
 });
 
-/* -------------------------
-   暗夜模式切换
-------------------------- */
+/* Theme toggle */
 const themeBtn = document.getElementById("themeToggle");
 
 function applyTheme() {
