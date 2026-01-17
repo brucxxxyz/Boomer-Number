@@ -3,13 +3,12 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f5f5f5;
-  color: #222;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", Arial, sans-serif;
+    background: #F2F2F7;
+    margin: 0;
+    padding: calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom)) 16px;
+    color: #222;
+    transition: background 0.3s, color 0.3s;
 }
 
 /* 主容器 */
@@ -246,7 +245,7 @@ button:disabled { background: #bbb; }
 /* ----------------------------- */
 
 html.dark body {
-  background: #111;
+  background: #1C1C1E;
   color: #eee;
 }
 
