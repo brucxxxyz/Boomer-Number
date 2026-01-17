@@ -126,6 +126,7 @@ input[type="number"] { text-align: center; }
   text-align: center;
 }
 
+/* 输入数字更大字体 */
 #guessInput {
   font-size: 24px;
   font-weight: bold;
@@ -190,6 +191,7 @@ button:disabled { background: #bbb; }
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000; /* ⭐ 修复亮色模式数字变白的问题 */
 }
 
 /* ⭐ 修复下拉菜单移位问题 */
@@ -248,13 +250,36 @@ button:disabled { background: #bbb; }
 /* 暗夜模式 */
 .dark body { background: #111; color: #eee; }
 .dark .container { background: #222; }
-.dark input, .dark select { background: #333; border: 1px solid #555; }
+
+/* ⭐ 暗夜模式输入框字体更亮 */
+.dark input,
+.dark select,
+.dark #maxNumber {
+  color: #fff !important;
+}
+
+/* ⭐ 暗夜模式语言菜单黑底白字 */
+.dark .lang-menu {
+  background: #000 !important;
+  border-color: #444 !important;
+}
+
+.dark .lang-menu div[data-lang] {
+  color: #fff !important;
+}
+
+/* ⭐ Language 标题保持灰色 */
+.dark .lang-title {
+  color: #aaa !important;
+  background: #111 !important;
+}
+
 .dark button { background: #d62828; }
 .dark .section { border-top: 1px solid #444; }
 .dark .countdown, .dark .result { color: #ff6b6b; }
-.dark .dropdown-btn { background: #333; border-color: #555; }
-.dark .dropdown-menu { background: #333; border-color: #555; }
-.dark .dropdown-menu div:hover { background: #444; }
+.dark .dropdown-btn { background: #333; border-color: #555; color: #fff; }
+.dark .dropdown-menu { background: #000; border-color: #555; }
+.dark .dropdown-menu div:hover { background: #222; }
 .dark .footer { color: #ccc; }
 
 /* ⭐ 开始按钮：水平 + 垂直居中 */
