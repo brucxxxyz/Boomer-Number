@@ -171,10 +171,10 @@ button:disabled {
 
 .player-stepper {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 12px;
+  align-items: center;      /* ⭐ 垂直居中 */
+  justify-content: center;
   gap: 12px;
+  height: 60px;             /* ⭐ 固定高度确保居中 */
 }
 
 /* ⭐ -/+ 按钮优化 */
@@ -187,6 +187,9 @@ button:disabled {
   border: none;
   background: #ff4b4b;
   color: #fff;
+  display: flex;            /* ⭐ 按钮内部居中 */
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   transition: transform 0.1s ease, background 0.2s ease;
@@ -213,8 +216,10 @@ button:disabled {
   border: 1px solid #ccc;
   background: #fff;
   text-align: center;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;            /* ⭐ 垂直居中文字 */
+  align-items: center;
+  justify-content: center;
+  color: #222;
 }
 
 /* 下拉菜单 */
