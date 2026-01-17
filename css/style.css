@@ -18,7 +18,7 @@ body {
   max-width: 540px;
   min-height: 100dvh;
   padding: 32px;
-  padding-top: 60px; /* 整体下移 */
+  padding-top: 60px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -48,9 +48,7 @@ h1 {
   gap: 12px;
 }
 
-/* 圆形按钮 */
-/* ⭐ 缩小语言按钮与暗夜模式按钮 */
-/* ⭐ 新版：缩小语言按钮与暗夜按钮 */
+/* ⭐ 缩小语言按钮与暗夜按钮 */
 #langBtn,
 #themeToggle {
   width: 36px !important;
@@ -59,16 +57,17 @@ h1 {
   min-height: 36px !important;
   max-width: 36px !important;
   max-height: 36px !important;
-
   border-radius: 50% !important;
   font-size: 16px !important;
-
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-
-  line-height: normal !important; /* ⭐ 避免图标被拉高 */
+  line-height: normal !important;
   padding: 0 !important;
+  background: #fff;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
 }
 
 /* 语言菜单 */
@@ -89,7 +88,6 @@ h1 {
   min-width: 160px;
 }
 
-/* 语言标题（不可点击） */
 .lang-title {
   padding: 10px 18px;
   font-weight: normal;
@@ -99,7 +97,6 @@ h1 {
   border-bottom: 1px solid #ddd;
   white-space: nowrap;
   pointer-events: none;
-  cursor: default;
   opacity: 0.75;
 }
 
@@ -109,7 +106,6 @@ h1 {
   border-bottom: 1px solid #444;
 }
 
-/* 语言选项 */
 .lang-menu div[data-lang] {
   padding: 10px 18px;
   cursor: pointer;
@@ -122,14 +118,6 @@ h1 {
 
 .hidden {
   display: none;
-}
-
-/* 最大数字输入框 */
-#maxNumber {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  height: 52px;
 }
 
 /* 输入区 */
@@ -146,11 +134,17 @@ input, select, button {
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 18px;
-  height: 52px; /* 统一高度 */
+  height: 52px;
   box-sizing: border-box;
 }
 
 input[type="number"] {
+  text-align: center;
+}
+
+#maxNumber {
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -190,8 +184,8 @@ button:disabled {
 
 /* -/+ 按钮 */
 .step-btn {
-  width: 52px;
-  height: 52px;
+  width: 52px !important;
+  height: 52px !important;
   font-size: 24px;
   font-weight: bold;
   border-radius: 12px;
@@ -219,8 +213,9 @@ button:disabled {
 }
 
 .dropdown-btn {
-  width: 100%;
-  max-width: 200px;
+  width: 200px !important;
+  min-width: 200px !important;
+  max-width: 200px !important;
   height: 52px;
   font-size: 22px;
   font-weight: bold;
@@ -233,9 +228,11 @@ button:disabled {
   color: #222;
 }
 
-/* 下拉菜单（宽度与输入框一致） */
+/* ⭐ 修复下拉菜单移位问题 */
 .player-stepper .dropdown-menu {
-  width: 100%;
+  width: 200px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
   background: #fff;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -339,70 +336,17 @@ button:disabled {
   opacity: 0.7;
 }
 
-/* ⭐ 强制统一所有按钮高度与输入框一致 */
-button,
-.step-btn,
-.dropdown-btn,
-
-/* ⭐ 强制统一所有按钮宽度（除 -/+ 按钮外） */
-button:not(.step-btn),
-.dropdown-btn {
-  width: 100% !important;
-  max-width: 200px !important;
-}
-
-/* ⭐ -/+ 按钮保持方形 */
-.step-btn {
-  width: 52px !important;
-  min-width: 52px !important;
-  max-width: 52px !important;
-}
-
-/* ⭐ 最大数字输入框高度统一 */
-#maxNumber {
-  height: 52px !important;
-  min-height: 52px !important;
-  max-height: 52px !important;
-  font-size: 24px !important;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* ⭐ 输入玩家名框高度统一 */
-input[type="text"],
-input[type="number"] {
-  height: 52px !important;
-  min-height: 52px !important;
-  max-height: 52px !important;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-/* ⭐ 玩家人数下拉菜单宽度与输入框一致 */
-.player-stepper .dropdown-menu {
-  width: 100% !important;
-  left: 0 !important;
-  transform: none !important;
-}
-
 /* ⭐ 开始按钮：水平 + 垂直居中 */
 #startBtn {
   width: auto !important;
   padding-left: 32px !important;
   padding-right: 32px !important;
-
   height: 52px !important;
-  min-height: 52px !important;
-  max-height: 52px !important;
-
   display: flex !important;
-  align-items: center !important;   /* ⭐ 垂直居中 */
-  justify-content: center !important; /* ⭐ 水平居中 */
-
+  align-items: center !important;
+  justify-content: center !important;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 20px !important;
-
-  line-height: normal !important; /* ⭐ 避免文字被拉高 */
+  line-height: normal !important;
 }
