@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 
   <!-- iPhone 主屏幕图标 -->
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=2">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=3">
 
   <!-- 禁止缩放（避免 iPhone 输入框放大） -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -18,17 +18,19 @@
 
   <!-- 顶部按钮 -->
   <div class="top-right">
+
+    <!-- 语言选择器 -->
     <div class="lang-wrapper">
       <button id="langBtn">🌐</button>
       <div id="langMenu" class="lang-menu hidden">
         <div class="lang-title">🌐 Language</div>
-    </div>
         <div data-lang="zh">🇨🇳 简体中文</div>
         <div data-lang="hk">🇭🇰 繁體中文</div>
         <div data-lang="en">🇺🇸 English</div>
       </div>
     </div>
 
+    <!-- 暗夜模式按钮 -->
     <button id="themeToggle">🌙</button>
   </div>
 
@@ -39,22 +41,29 @@
 
     <label id="label-player-count">选择玩家人数</label>
 
-    <!-- 玩家人数按钮组 -->
-    <div id="playerButtons" class="player-buttons">
-      <button data-count="2">2</button>
-      <button data-count="3">3</button>
-      <button data-count="4">4</button>
-      <button data-count="5">5</button>
-      <button data-count="6">6</button>
+    <!-- 玩家人数下拉菜单 -->
+    <div class="dropdown">
+      <button id="playerDropdownBtn" class="dropdown-btn">选择玩家人数 ▼</button>
+      <div id="playerDropdownMenu" class="dropdown-menu hidden">
+        <div data-count="2">2 人</div>
+        <div data-count="3">3 人</div>
+        <div data-count="4">4 人</div>
+        <div data-count="5">5 人</div>
+        <div data-count="6">6 人</div>
+        <div data-count="7">7 人</div>
+        <div data-count="8">8 人</div>
+      </div>
     </div>
 
-    <!-- 隐藏的下拉框（逻辑使用） -->
+    <!-- 隐藏的真实人数值 -->
     <select id="playerCount" class="hidden">
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
       <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
     </select>
 
     <!-- 玩家名字输入区 -->
