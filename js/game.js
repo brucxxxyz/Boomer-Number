@@ -134,7 +134,7 @@ document.getElementById("startBtn").onclick = () => {
 
   low = 0;
   high = maxNum;
-  secret = Math.floor(Math.random() * (maxNum + 1));
+  secret = Math.floor(Math.random() * (maxNum - 1)) + 1;
   current = 0;
 
   setup.classList.add("hidden");
