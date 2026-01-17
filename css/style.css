@@ -2,27 +2,28 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* 全屏 + iPhone 刘海适配 */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", Arial, sans-serif;
-    background: #F2F2F7;
+    background: #F2F2F7; /* iOS 浅灰 */
     margin: 0;
     padding: calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom)) 16px;
     color: #222;
     transition: background 0.3s, color 0.3s;
-    min-height: 100vh;          /* ⭐ 全屏高度 */
-    width: 100vw;               /* ⭐ 全屏宽度 */
-    box-sizing: border-box;     /* ⭐ 防止 padding 撑爆布局 */
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
-/* 主容器 */
+/* 主容器：全屏，不再是卡片 */
 .container {
     width: 100%;
-    max-width: none;        /* ⭐ 不再限制宽度 */
-    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-    padding: 0;             /* ⭐ 去掉卡片内边距 */
-    background: transparent; /* ⭐ 不再是白色卡片 */
-    border-radius: 0;       /* ⭐ 去掉圆角 */
-    box-shadow: none;       /* ⭐ 去掉阴影 */
+    max-width: none;
+    min-height: 100%;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 /* 标题 */
@@ -238,19 +239,15 @@ button:disabled { background: #bbb; }
 }
 
 /* ----------------------------- */
-/* ⭐ 暗夜模式（干净版） */
+/* ⭐ 暗夜模式（iOS 深灰） */
 /* ----------------------------- */
 
 html.dark body {
-  background: #1C1C1E;
+  background: #1C1C1E !important;
   color: #eee;
 }
 
-html.dark .container {
-  background: #222;
-}
-
-/* 输入框（包括动态生成的玩家名输入框） */
+/* 输入框 */
 html.dark input,
 html.dark select,
 html.dark textarea {
@@ -304,13 +301,3 @@ html.dark .result { color: #ff6b6b; }
 html.dark .dropdown-menu { background: #333; border-color: #555; }
 html.dark .dropdown-menu div:hover { background: #222; }
 html.dark .footer { color: #ccc; }
-
-/* ⭐ 光亮模式背景：iPhone 风格浅灰 */
-body {
-  background: #F2F2F7 !important;
-}
-
-/* ⭐ 暗夜模式背景：iPhone 风格深灰 */
-html.dark body {
-  background: #1C1C1E !important;
-}
