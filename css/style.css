@@ -12,6 +12,7 @@ body {
   justify-content: center;
 }
 
+/* 主容器 */
 .container {
   width: 100%;
   max-width: 540px;
@@ -43,6 +44,7 @@ h1 {
   gap: 12px;
 }
 
+/* 圆形按钮 */
 #langBtn,
 #themeToggle {
   width: 44px;
@@ -78,11 +80,13 @@ h1 {
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   z-index: 100;
+  min-width: 150px;      /* ⭐ 保证一行显示 */
 }
 
 .lang-menu div {
-  padding: 10px 16px;
+  padding: 10px 18px;
   cursor: pointer;
+  white-space: nowrap;   /* ⭐ 强制不换行 */
 }
 
 .lang-menu div:hover {
@@ -112,7 +116,7 @@ input, select, button {
 
 input[type="number"] {
   text-align: center;
-  font-size: 16px;
+  font-size: 16px; /* 防止 iPhone 放大 */
 }
 
 /* 按钮 */
@@ -122,10 +126,15 @@ button {
   border: none;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 button:hover {
   background: #e03c3c;
+}
+
+button:disabled {
+  background: #bbb;
 }
 
 /* 玩家人数按钮组 */
@@ -149,6 +158,10 @@ button:hover {
   padding-top: 24px;
 }
 
+.info {
+  margin: 10px 0;
+}
+
 .countdown {
   text-align: center;
   font-size: 48px;
@@ -168,6 +181,7 @@ button:hover {
   text-align: center;
   margin-top: 30px;
   opacity: 0.6;
+  user-select: none;
 }
 
 /* 暗夜模式 */
@@ -192,6 +206,15 @@ button:hover {
   background: #d62828;
 }
 
+.dark .section {
+  border-top: 1px solid #444;
+}
+
+.dark .countdown,
+.dark .result {
+  color: #ff6b6b;
+}
+
 .dark .lang-menu {
   background: #333;
   border-color: #555;
@@ -199,4 +222,9 @@ button:hover {
 
 .dark .lang-menu div:hover {
   background: #444;
+}
+
+.dark .footer {
+  color: #ccc;
+  opacity: 0.7;
 }
