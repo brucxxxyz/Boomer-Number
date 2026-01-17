@@ -43,12 +43,11 @@ function renderNameInputs() {
 renderNameInputs();
 
 /* -------------------------
-   玩家人数：左右按钮 + 下拉菜单同步
+   玩家人数：左右按钮 + 中间下拉按钮同步
 -------------------------- */
 
 const minusBtn = document.getElementById("minusBtn");
 const plusBtn = document.getElementById("plusBtn");
-const playerStepperLabel = document.getElementById("playerStepperLabel");
 
 const playerDropdownBtn = document.getElementById("playerDropdownBtn");
 const playerDropdownMenu = document.getElementById("playerDropdownMenu");
@@ -57,10 +56,7 @@ const playerDropdownMenu = document.getElementById("playerDropdownMenu");
 function updatePlayerCountUI() {
   const count = parseInt(playerCount.value);
 
-  // 左右按钮中间显示纯数字
-  playerStepperLabel.textContent = count;
-
-  // 下拉按钮显示纯数字 + ▼
+  // 中间按钮显示数字
   playerDropdownBtn.textContent = `${count} ▼`;
 }
 
