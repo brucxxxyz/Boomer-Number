@@ -38,7 +38,7 @@ const LANG = {
   },
 
   en: {
-    title: "💥Boom Number",
+    title: "💥Boomer Number",
     labelPlayerCount: "Players",
     labelMaxNumber: "Max number (≥ players × 10)",
     start: "Start Game",
