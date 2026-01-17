@@ -32,7 +32,7 @@ body {
 h1 {
   text-align: center;
   margin-top: 0;
-  font-size: 28px;        /* 调小，更稳重 */
+  font-size: 28px;
   font-weight: 700;
   color: #d62828;
   margin-bottom: 10px;
@@ -137,7 +137,7 @@ input, select, button {
 
 input[type="number"] {
   text-align: center;
-  font-size: 16px; /* 防止 iPhone 放大 */
+  font-size: 16px;
 }
 
 /* ⭐ 输入数字更大字体 */
@@ -166,7 +166,7 @@ button:disabled {
 }
 
 /* -------------------------
-   ⭐ 左右按钮选择人数（优化版）
+   ⭐ 左右按钮 + 中间人数按钮
 -------------------------- */
 
 .player-stepper {
@@ -177,15 +177,15 @@ button:disabled {
   gap: 12px;
 }
 
-/* ⭐ 优化 -/+ 按钮：默认红色、比例协调、按下缩放 */
+/* ⭐ -/+ 按钮优化 */
 .step-btn {
   width: 50px;
   height: 50px;
-  font-size: 24px;          /* 更协调 */
+  font-size: 24px;
   font-weight: bold;
   border-radius: 12px;
   border: none;
-  background: #ff4b4b;      /* 默认红色 */
+  background: #ff4b4b;
   color: #fff;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
@@ -193,53 +193,31 @@ button:disabled {
 }
 
 .step-btn:active {
-  transform: scale(0.92);   /* 按下缩放 */
-  background: #e03c3c;      /* 深红按压效果 */
+  transform: scale(0.92);
+  background: #e03c3c;
 }
 
-/* 中间数字 */
-.step-label {
+/* ⭐ 中间下拉按钮居中 */
+.center-dropdown {
   flex: 1;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.dark .step-btn {
-  background: #d62828;
-  color: #fff;
-}
-
-.dark .step-btn:active {
-  background: #b71f1f;
-}
-
-.dark .step-label {
-  color: #eee;
-}
-
-/* -------------------------
-   下拉菜单选择人数
--------------------------- */
-
-.dropdown {
-  position: relative;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .dropdown-btn {
-  width: 100%;
+  width: 90px;
   padding: 14px;
   font-size: 22px;
   font-weight: bold;
   border-radius: 10px;
   border: 1px solid #ccc;
   background: #fff;
-  text-align: center; /* ⭐ 数字居中 */
+  text-align: center;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* 下拉菜单 */
 .dropdown-menu {
   position: absolute;
   top: 54px;
@@ -262,21 +240,6 @@ button:disabled {
 
 .dropdown-menu div:hover {
   background: #eee;
-}
-
-.dark .dropdown-btn {
-  background: #333;
-  color: #eee;
-  border-color: #555;
-}
-
-.dark .dropdown-menu {
-  background: #333;
-  border-color: #555;
-}
-
-.dark .dropdown-menu div:hover {
-  background: #444;
 }
 
 /* 游戏区 */
@@ -343,12 +306,18 @@ button:disabled {
   color: #ff6b6b;
 }
 
-.dark .lang-menu {
+.dark .dropdown-btn {
+  background: #333;
+  color: #eee;
+  border-color: #555;
+}
+
+.dark .dropdown-menu {
   background: #333;
   border-color: #555;
 }
 
-.dark .lang-menu div:hover {
+.dark .dropdown-menu div:hover {
   background: #444;
 }
 
