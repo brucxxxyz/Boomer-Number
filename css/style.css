@@ -190,7 +190,7 @@ button:disabled { background: #bbb; }
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000; /* ⭐ 修复亮色模式数字变白 */
+  color: #000;
 }
 
 /* ⭐ 修复下拉菜单移位问题 */
@@ -246,7 +246,10 @@ button:disabled { background: #bbb; }
   user-select: none;
 }
 
-/* 暗夜模式 */
+/* ----------------------------- */
+/* ⭐ 暗夜模式（最新修正版） */
+/* ----------------------------- */
+
 .dark body { background: #111; color: #eee; }
 .dark .container { background: #222; }
 
@@ -264,6 +267,14 @@ button:disabled { background: #bbb; }
   background: #333 !important;
   border-color: #555 !important;
   color: #fff !important;
+}
+
+/* ⭐ 暗夜模式语言按钮 & 暗夜按钮 → 暗灰色背景 */
+.dark #langBtn,
+.dark #themeToggle {
+  background: #333 !important;
+  color: #fff !important;
+  border: 1px solid #555 !important;
 }
 
 /* ⭐ 暗夜模式语言菜单背景统一为暗灰色 */
