@@ -47,7 +47,7 @@ h1 {
   gap: 12px;
 }
 
-/* ⭐ 缩小语言按钮与暗夜按钮 */
+/* ⭐ 语言按钮 + 暗夜按钮（亮色模式） */
 #langBtn,
 #themeToggle {
   width: 36px;
@@ -55,7 +55,7 @@ h1 {
   border-radius: 50%;
   font-size: 16px;
   background: #fff;
-  border: none;
+  border: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,11 +247,17 @@ button:disabled { background: #bbb; }
 }
 
 /* ----------------------------- */
-/* ⭐ 暗夜模式（最新修正版） */
+/* ⭐ 暗夜模式（最终修正版） */
 /* ----------------------------- */
 
-.dark body { background: #111; color: #eee; }
-.dark .container { background: #222; }
+.dark {
+  background: #111;
+  color: #eee;
+}
+
+.dark .container {
+  background: #222;
+}
 
 /* ⭐ 暗夜模式输入框背景统一为暗灰色 */
 .dark input[type="text"],
@@ -274,7 +280,8 @@ button:disabled { background: #bbb; }
 .dark #themeToggle {
   background: #333 !important;
   color: #fff !important;
-  border: none;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* ⭐ 暗夜模式语言菜单背景统一为暗灰色 */
