@@ -390,3 +390,11 @@ input[type="number"] {
   transform: none !important;
 }
 
+#startBtn {
+  width: auto !important;        /* 不要占满整行 */
+  padding-left: 32px;
+  padding-right: 32px;           /* 让按钮更好看 */
+  display: block !important;
+  margin: 20px auto 0 auto !important;  /* ⭐ 水平居中 */
+}
+
