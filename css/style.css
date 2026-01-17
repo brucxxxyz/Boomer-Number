@@ -16,7 +16,7 @@ body {
 .container {
   width: 100%;
   max-width: 540px;
-  min-height: 100vh;
+  min-height: 100dvh;        /* ⭐ 关键：真实可视高度，进入页面不需要滑动 */
   padding: 32px;
   box-sizing: border-box;
   display: flex;
@@ -222,10 +222,7 @@ button:disabled {
   align-items: center;
   justify-content: center;
   color: #222;
-}
-
-.dropdown-btn {
-  letter-spacing: 1px;   /* ⭐ 数字更稳重 */
+  letter-spacing: 1px;      /* ⭐ 数字更稳重 */
 }
 
 /* 下拉菜单 */
