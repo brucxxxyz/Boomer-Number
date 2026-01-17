@@ -49,19 +49,14 @@ h1 {
 }
 
 /* 圆形按钮 */
+/* ⭐ 缩小语言按钮与暗夜模式按钮 */
 #langBtn,
 #themeToggle {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: #fff;
-  border: none;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  cursor: pointer;
+  width: 40px !important;
+  height: 40px !important;
+  font-size: 18px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
 }
 
 /* 语言菜单 */
