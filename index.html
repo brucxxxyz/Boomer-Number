@@ -9,7 +9,7 @@
   <!-- 禁止缩放（避免 iPhone 输入框放大） -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>💥Boomber Number</title>
+  <title>💥爆炸数字</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -41,7 +41,14 @@
 
     <label id="label-player-count">选择玩家人数</label>
 
-    <!-- 玩家人数下拉菜单 -->
+    <!-- 左右按钮 + 显示标签 -->
+    <div class="player-stepper">
+      <button id="minusBtn" class="step-btn">－</button>
+      <div id="playerStepperLabel" class="step-label">玩家人数：2 人</div>
+      <button id="plusBtn" class="step-btn">＋</button>
+    </div>
+
+    <!-- 下拉菜单 -->
     <div class="dropdown">
       <button id="playerDropdownBtn" class="dropdown-btn">选择玩家人数 ▼</button>
       <div id="playerDropdownMenu" class="dropdown-menu hidden">
@@ -55,7 +62,7 @@
       </div>
     </div>
 
-    <!-- 隐藏的真实人数值 -->
+    <!-- 隐藏真实人数 -->
     <select id="playerCount" class="hidden">
       <option value="2">2</option>
       <option value="3">3</option>
