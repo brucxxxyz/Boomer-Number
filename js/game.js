@@ -42,29 +42,70 @@ function renderNameInputs() {
 
 renderNameInputs();
 
-/* 玩家人数下拉菜单 */
+/* -------------------------
+   玩家人数：左右按钮 + 下拉菜单同步
+-------------------------- */
+
+const minusBtn = document.getElementById("minusBtn");
+const plusBtn = document.getElementById("plusBtn");
+const playerStepperLabel = document.getElementById("playerStepperLabel");
+
 const playerDropdownBtn = document.getElementById("playerDropdownBtn");
 const playerDropdownMenu = document.getElementById("playerDropdownMenu");
 
+/* 更新人数显示（核心同步函数） */
+function updatePlayerCountUI() {
+  const L = LANG[currentLang];
+  const count = parseInt(playerCount.value);
+
+  // 左右按钮显示
+  playerStepperLabel.textContent = `${L.playerCountLabel}${count} 人`;
+
+  // 下拉按钮显示
+  playerDropdownBtn.textContent = `${L.playerCountLabel}${count} 人 ▼`;
+}
+
+/* 左按钮 */
+minusBtn.addEventListener("click", () => {
+  let count = parseInt(playerCount.value);
+  if (count > 2) {
+    count--;
+    playerCount.value = count;
+    updatePlayerCountUI();
+    renderNameInputs();
+  }
+});
+
+/* 右按钮 */
+plusBtn.addEventListener("click", () => {
+  let count = parseInt(playerCount.value);
+  if (count < 8) {
+    count++;
+    playerCount.value = count;
+    updatePlayerCountUI();
+    renderNameInputs();
+  }
+});
+
+/* 下拉菜单打开 */
 playerDropdownBtn.addEventListener("click", () => {
   playerDropdownMenu.classList.toggle("hidden");
 });
 
-// 选择人数（2～8）
+/* 下拉菜单选择人数 */
 playerDropdownMenu.querySelectorAll("div[data-count]").forEach(item => {
   item.addEventListener("click", () => {
     const count = item.getAttribute("data-count");
     playerCount.value = count;
 
-    playerDropdownBtn.textContent = `玩家人数：${count} 人 ▼`;
+    updatePlayerCountUI();
+    renderNameInputs();
 
     playerDropdownMenu.classList.add("hidden");
-
-    renderNameInputs();
   });
 });
 
-// 点击外部关闭人数菜单
+/* 点击外部关闭下拉菜单 */
 document.addEventListener("click", e => {
   if (!playerDropdownBtn.contains(e.target) &&
       !playerDropdownMenu.contains(e.target)) {
@@ -72,7 +113,10 @@ document.addEventListener("click", e => {
   }
 });
 
-/* 开始游戏 */
+/* -------------------------
+   开始游戏
+-------------------------- */
+
 document.getElementById("startBtn").onclick = () => {
   const count = parseInt(playerCount.value);
   const need = count * 10;
@@ -180,11 +224,17 @@ document.getElementById("restartBtn").onclick = () => {
   setup.classList.remove("hidden");
   game.classList.add("hidden");
   end.classList.add("hidden");
+
   maxNumber.value = 50;
+
+  updatePlayerCountUI();
   renderNameInputs();
 };
 
-/* 语言菜单 */
+/* -------------------------
+   语言菜单
+-------------------------- */
+
 const langBtn = document.getElementById("langBtn");
 const langMenu = document.getElementById("langMenu");
 
@@ -201,14 +251,17 @@ langMenu.querySelectorAll("div[data-lang]").forEach(item => {
   });
 });
 
-// 点击外部关闭语言菜单
+/* 点击外部关闭语言菜单 */
 document.addEventListener("click", e => {
   if (!langMenu.contains(e.target) && e.target !== langBtn) {
     langMenu.classList.add("hidden");
   }
 });
 
-/* 暗夜模式 */
+/* -------------------------
+   暗夜模式
+-------------------------- */
+
 const themeBtn = document.getElementById("themeToggle");
 
 function applyTheme() {
@@ -231,3 +284,24 @@ themeBtn.addEventListener("click", () => {
 });
 
 applyTheme();
+
+/* -------------------------
+   切换语言
+-------------------------- */
+
+function setLang(lang) {
+  currentLang = lang;
+  const L = LANG[lang];
+
+  document.getElementById("title").textContent = L.title;
+  document.getElementById("label-player-count").textContent = L.labelPlayerCount;
+  document.getElementById("label-max-number").textContent = L.labelMaxNumber;
+  document.getElementById("startBtn").textContent = L.start;
+  document.getElementById("label-guess").textContent = L.labelGuess;
+  document.getElementById("guessBtn").textContent = L.guessBtn;
+  document.getElementById("restartBtn").textContent = L.restart;
+
+  updatePlayerCountUI();
+  renderNameInputs();
+  updateUI();
+}
