@@ -18,7 +18,7 @@ body {
   max-width: 540px;
   min-height: 100dvh;
   padding: 32px;
-  padding-top: 72px;     /* ⭐ 新增：整体往下移动一行 */
+  padding-top: 72px; /* 整体下移 */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ body {
   position: relative;
 }
 
-/* ⭐ 标题优化 */
+/* 标题 */
 h1 {
   text-align: center;
   margin-top: 0;
@@ -51,8 +51,8 @@ h1 {
 /* 圆形按钮 */
 #langBtn,
 #themeToggle {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: #fff;
   border: none;
@@ -62,11 +62,6 @@ h1 {
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   cursor: pointer;
-}
-
-.dark #langBtn,
-.dark #themeToggle {
-  background: #f0f0f0;
 }
 
 /* 语言菜单 */
@@ -87,16 +82,16 @@ h1 {
   min-width: 160px;
 }
 
-/* ⭐ 语言标题不可点击 */
+/* 语言标题（不可点击） */
 .lang-title {
   padding: 10px 18px;
-  font-weight: normal;     /* ⭐ 不加粗 */
-  font-size: 14px;         /* ⭐ 字体更小 */
+  font-weight: normal;
+  font-size: 14px;
   color: #666;
   background: #f9f9f9;
   border-bottom: 1px solid #ddd;
   white-space: nowrap;
-  pointer-events: none;    /* 保持不可点击 */
+  pointer-events: none;
   cursor: default;
   opacity: 0.75;
 }
@@ -105,8 +100,6 @@ h1 {
   background: #2a2a2a;
   color: #aaa;
   border-bottom: 1px solid #444;
-  font-weight: normal;     /* ⭐ 不加粗 */
-  font-size: 14px;         /* ⭐ 字体更小 */
 }
 
 /* 语言选项 */
@@ -124,10 +117,12 @@ h1 {
   display: none;
 }
 
+/* 最大数字输入框 */
 #maxNumber {
-  font-size: 24px;       /* ⭐ 字体更大 */
-  font-weight: bold;     /* ⭐ 更醒目 */
-  text-align: center;    /* ⭐ 居中 */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  height: 52px;
 }
 
 /* 输入区 */
@@ -144,15 +139,15 @@ input, select, button {
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 18px;
+  height: 52px; /* 统一高度 */
   box-sizing: border-box;
 }
 
 input[type="number"] {
   text-align: center;
-  font-size: 16px;
 }
 
-/* ⭐ 输入数字更大字体 */
+/* 输入数字更大字体 */
 #guessInput {
   font-size: 24px;
   font-weight: bold;
@@ -177,29 +172,26 @@ button:disabled {
   background: #bbb;
 }
 
-/* -------------------------
-   ⭐ 左右按钮 + 中间人数按钮
--------------------------- */
-
+/* 玩家人数选择区 */
 .player-stepper {
   display: flex;
-  align-items: center;      /* ⭐ 垂直居中 */
+  align-items: center;
   justify-content: center;
   gap: 12px;
-  height: 60px;             /* ⭐ 固定高度确保居中 */
+  height: 52px;
 }
 
-/* ⭐ -/+ 按钮优化 */
+/* -/+ 按钮 */
 .step-btn {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   font-size: 24px;
   font-weight: bold;
   border-radius: 12px;
   border: none;
   background: #ff4b4b;
   color: #fff;
-  display: flex;            /* ⭐ 按钮内部居中 */
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -212,7 +204,7 @@ button:disabled {
   background: #e03c3c;
 }
 
-/* ⭐ 中间下拉按钮居中 */
+/* 中间数字按钮 */
 .center-dropdown {
   flex: 1;
   display: flex;
@@ -220,26 +212,22 @@ button:disabled {
 }
 
 .dropdown-btn {
-  width: 90px;
-  padding: 14px;
+  width: 100%;
+  max-width: 200px;
+  height: 52px;
   font-size: 22px;
   font-weight: bold;
   border-radius: 10px;
   border: 1px solid #ccc;
   background: #fff;
-  text-align: center;
-  display: flex;            /* ⭐ 垂直居中文字 */
+  display: flex;
   align-items: center;
   justify-content: center;
   color: #222;
-  letter-spacing: 1px;      /* ⭐ 数字更稳重 */
 }
 
-/* 下拉菜单 */
-.dropdown-menu {
-  position: absolute;
-  top: 54px;
-  left: 0;
+/* 下拉菜单（宽度与输入框一致） */
+.player-stepper .dropdown-menu {
   width: 100%;
   background: #fff;
   border-radius: 10px;
@@ -250,7 +238,7 @@ button:disabled {
 }
 
 .dropdown-menu div {
-  padding: 12px 16px;
+  padding: 12px 0;
   cursor: pointer;
   font-size: 20px;
   text-align: center;
