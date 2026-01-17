@@ -334,3 +334,50 @@ button:disabled { background: #bbb; }
   color: #fff !important;
   border-color: #555 !important;
 }
+
+/* ⭐ 暗夜模式真正覆盖整个页面 */
+.dark body {
+  background: #111 !important;
+  color: #eee !important;
+}
+
+/* ⭐ 暗夜模式标题变白 */
+.dark h1 {
+  color: #fff !important;
+}
+
+/* ⭐ 暗夜模式输入框统一暗灰色背景 + 白字 */
+.dark input[type="text"],
+.dark input[type="number"],
+.dark select {
+  background: #333 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
+
+/* ⭐ 暗夜模式语言按钮背景暗灰色 */
+.dark #langBtn,
+.dark #themeToggle {
+  background: #333 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ⭐ 暗夜模式语言菜单背景暗灰色 */
+.dark .lang-menu {
+  background: #333 !important;
+  border-color: #555 !important;
+}
+
+/* ⭐ 暗夜模式语言选项白字 */
+.dark .lang-menu div[data-lang] {
+  color: #fff !important;
+}
+
+/* ⭐ Language 标题灰字 */
+.dark .lang-title {
+  color: #aaa !important;
+  background: #333 !important;
+  border-bottom: 1px solid #555 !important;
+}
