@@ -299,4 +299,6 @@ function setLang(lang) {
   updatePlayerCountUI();
   renderNameInputs();
   updateUI();
+
+  localStorage.setItem("lang", lang);   // ⭐ 保存语言
 }
