@@ -57,7 +57,7 @@ function updatePlayerCountUI() {
   const count = parseInt(playerCount.value);
 
   // 中间按钮显示数字
-  playerDropdownBtn.textContent = `${count} ▼`;
+  playerDropdownBtn.textContent = `${count}`;
 }
 
 /* 左按钮 */
