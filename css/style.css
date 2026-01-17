@@ -18,7 +18,7 @@ body {
   max-width: 540px;
   min-height: 100dvh;
   padding: 32px;
-  padding-top: 48px;     /* ⭐ 新增：整体往下移动一行 */
+  padding-top: 72px;     /* ⭐ 新增：整体往下移动一行 */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -90,12 +90,13 @@ h1 {
 /* ⭐ 语言标题不可点击 */
 .lang-title {
   padding: 10px 18px;
-  font-weight: bold;
+  font-weight: normal;     /* ⭐ 不加粗 */
+  font-size: 14px;         /* ⭐ 字体更小 */
   color: #666;
   background: #f9f9f9;
   border-bottom: 1px solid #ddd;
   white-space: nowrap;
-  pointer-events: none;     /* ⭐ 禁止点击、hover、active */
+  pointer-events: none;    /* 保持不可点击 */
   cursor: default;
   opacity: 0.75;
 }
@@ -104,6 +105,8 @@ h1 {
   background: #2a2a2a;
   color: #aaa;
   border-bottom: 1px solid #444;
+  font-weight: normal;     /* ⭐ 不加粗 */
+  font-size: 14px;         /* ⭐ 字体更小 */
 }
 
 /* 语言选项 */
