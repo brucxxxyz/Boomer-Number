@@ -120,6 +120,12 @@ h1 {
   display: none;
 }
 
+#maxNumber {
+  font-size: 26px;       /* ⭐ 字体更大 */
+  font-weight: bold;     /* ⭐ 更醒目 */
+  text-align: center;    /* ⭐ 居中 */
+}
+
 /* 输入区 */
 label {
   margin-top: 14px;
