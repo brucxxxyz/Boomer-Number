@@ -40,16 +40,36 @@ function renderNameInputs() {
   }
 }
 
-playerCount.addEventListener("change", renderNameInputs);
 renderNameInputs();
 
-/* 玩家人数按钮组 */
-document.querySelectorAll("#playerButtons button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const count = btn.getAttribute("data-count");
+/* 玩家人数下拉菜单 */
+const playerDropdownBtn = document.getElementById("playerDropdownBtn");
+const playerDropdownMenu = document.getElementById("playerDropdownMenu");
+
+playerDropdownBtn.addEventListener("click", () => {
+  playerDropdownMenu.classList.toggle("hidden");
+});
+
+// 选择人数（2～8）
+playerDropdownMenu.querySelectorAll("div[data-count]").forEach(item => {
+  item.addEventListener("click", () => {
+    const count = item.getAttribute("data-count");
     playerCount.value = count;
+
+    playerDropdownBtn.textContent = `玩家人数：${count} 人 ▼`;
+
+    playerDropdownMenu.classList.add("hidden");
+
     renderNameInputs();
   });
+});
+
+// 点击外部关闭人数菜单
+document.addEventListener("click", e => {
+  if (!playerDropdownBtn.contains(e.target) &&
+      !playerDropdownMenu.contains(e.target)) {
+    playerDropdownMenu.classList.add("hidden");
+  }
 });
 
 /* 开始游戏 */
@@ -172,7 +192,8 @@ langBtn.addEventListener("click", () => {
   langMenu.classList.toggle("hidden");
 });
 
-langMenu.querySelectorAll("div").forEach(item => {
+// ⭐ 只允许点击 data-lang，不允许点击标题
+langMenu.querySelectorAll("div[data-lang]").forEach(item => {
   item.addEventListener("click", () => {
     const lang = item.getAttribute("data-lang");
     setLang(lang);
@@ -180,6 +201,7 @@ langMenu.querySelectorAll("div").forEach(item => {
   });
 });
 
+// 点击外部关闭语言菜单
 document.addEventListener("click", e => {
   if (!langMenu.contains(e.target) && e.target !== langBtn) {
     langMenu.classList.add("hidden");
