@@ -16,8 +16,9 @@ body {
 .container {
   width: 100%;
   max-width: 540px;
-  min-height: 100dvh;        /* ⭐ 关键：真实可视高度，进入页面不需要滑动 */
+  min-height: 100dvh;
   padding: 32px;
+  padding-top: 48px;     /* ⭐ 新增：整体往下移动一行 */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
