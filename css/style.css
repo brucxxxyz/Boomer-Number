@@ -331,3 +331,61 @@ button:disabled {
   color: #ccc;
   opacity: 0.7;
 }
+
+/* ⭐ 强制统一所有按钮高度与输入框一致 */
+button,
+.step-btn,
+.dropdown-btn,
+#langBtn,
+#themeToggle {
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  line-height: 52px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ⭐ 强制统一所有按钮宽度（除 -/+ 按钮外） */
+button:not(.step-btn),
+.dropdown-btn {
+  width: 100% !important;
+  max-width: 200px !important;
+}
+
+/* ⭐ -/+ 按钮保持方形 */
+.step-btn {
+  width: 52px !important;
+  min-width: 52px !important;
+  max-width: 52px !important;
+}
+
+/* ⭐ 最大数字输入框高度统一 */
+#maxNumber {
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  font-size: 24px !important;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ⭐ 输入玩家名框高度统一 */
+input[type="text"],
+input[type="number"] {
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* ⭐ 玩家人数下拉菜单宽度与输入框一致 */
+.player-stepper .dropdown-menu {
+  width: 100% !important;
+  left: 0 !important;
+  transform: none !important;
+}
+
