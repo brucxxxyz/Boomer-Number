@@ -1,18 +1,16 @@
-/* 当前语言（默认中文） */
 let currentLang = "zh";
 
-/* 多语言字典 */
 const LANG = {
   zh: {
     title: "💥爆炸数字",
-    labelPlayerCount: "选择玩家人数",
+    labelPlayerCount: "玩家人数",
     labelMaxNumber: "最大数字（≥ 人数 × 10）",
     start: "开始游戏",
     labelGuess: "请输入数字（范围内部）",
     guessBtn: "确认数字并开始倒计时",
     restart: "再来一局",
 
-    playerCountLabel: "玩家人数：",
+    playerCountLabel: "",
 
     playerName: (i) => `玩家 ${i}`,
     turn: (name) => `轮到：${name}`,
@@ -23,14 +21,14 @@ const LANG = {
 
   hk: {
     title: "💥爆炸數字",
-    labelPlayerCount: "選擇玩家人數",
+    labelPlayerCount: "玩家人數",
     labelMaxNumber: "最大數字（≥ 人數 × 10）",
     start: "開始遊戲",
     labelGuess: "請輸入數字（範圍內）",
     guessBtn: "確認數字並開始倒數",
     restart: "再來一局",
 
-    playerCountLabel: "玩家人數：",
+    playerCountLabel: "",
 
     playerName: (i) => `玩家 ${i}`,
     turn: (name) => `輪到：${name}`,
@@ -41,14 +39,14 @@ const LANG = {
 
   en: {
     title: "💥Boom Number",
-    labelPlayerCount: "Select number of players",
+    labelPlayerCount: "Players",
     labelMaxNumber: "Max number (≥ players × 10)",
     start: "Start Game",
     labelGuess: "Enter a number (inside range)",
     guessBtn: "Confirm and start countdown",
     restart: "Play Again",
 
-    playerCountLabel: "Players: ",
+    playerCountLabel: "",
 
     playerName: (i) => `Player ${i}`,
     turn: (name) => `Turn: ${name}`,
