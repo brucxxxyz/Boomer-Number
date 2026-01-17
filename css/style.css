@@ -18,7 +18,7 @@ body {
   max-width: 540px;
   min-height: 100dvh;
   padding: 32px;
-  padding-top: 72px; /* 整体下移 */
+  padding-top: 60px; /* 整体下移 */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
