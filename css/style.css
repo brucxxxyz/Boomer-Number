@@ -224,6 +224,10 @@ button:disabled {
   color: #222;
 }
 
+.dropdown-btn {
+  letter-spacing: 1px;   /* ⭐ 数字更稳重 */
+}
+
 /* 下拉菜单 */
 .dropdown-menu {
   position: absolute;
