@@ -308,3 +308,13 @@ html.dark .result { color: #ff6b6b; }
 html.dark .dropdown-menu { background: #333; border-color: #555; }
 html.dark .dropdown-menu div:hover { background: #222; }
 html.dark .footer { color: #ccc; }
+
+/* ⭐ 光亮模式背景：iPhone 风格浅灰 */
+body {
+  background: #F2F2F7 !important;
+}
+
+/* ⭐ 暗夜模式背景：iPhone 风格深灰 */
+html.dark body {
+  background: #1C1C1E !important;
+}
