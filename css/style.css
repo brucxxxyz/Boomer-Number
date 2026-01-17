@@ -47,7 +47,7 @@ h1 {
   gap: 12px;
 }
 
-/* ⭐ 语言按钮 + 暗夜按钮（亮色模式） */
+/* 语言按钮 + 暗夜按钮（亮色模式） */
 #langBtn,
 #themeToggle {
   width: 36px;
@@ -55,7 +55,7 @@ h1 {
   border-radius: 50%;
   font-size: 16px;
   background: #fff;
-  border: none !important;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,12 +120,7 @@ input, select, button {
 
 input[type="number"] { text-align: center; }
 
-#maxNumber {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-
+#maxNumber,
 #guessInput {
   font-size: 24px;
   font-weight: bold;
@@ -193,7 +188,7 @@ button:disabled { background: #bbb; }
   color: #000;
 }
 
-/* ⭐ 修复下拉菜单移位问题 */
+/* 下拉菜单 */
 .player-stepper .dropdown-menu {
   width: 200px;
   left: 50%;
@@ -247,147 +242,69 @@ button:disabled { background: #bbb; }
 }
 
 /* ----------------------------- */
-/* ⭐ 暗夜模式（最终修正版） */
+/* ⭐ 暗夜模式（干净版） */
 /* ----------------------------- */
 
-.dark {
+html.dark body {
   background: #111;
   color: #eee;
 }
 
-.dark .container {
+html.dark .container {
   background: #222;
 }
 
-/* ⭐ 暗夜模式输入框背景统一为暗灰色 */
-.dark input[type="text"],
-.dark input[type="number"],
-.dark #maxNumber {
+/* 输入框（包括动态生成的玩家名输入框） */
+html.dark input,
+html.dark select,
+html.dark textarea {
   background: #333 !important;
   color: #fff !important;
   border-color: #555 !important;
 }
 
-/* ⭐ 暗夜模式人数按钮保持暗灰色 */
-.dark .dropdown-btn {
-  background: #333 !important;
-  border-color: #555 !important;
+/* 标题 */
+html.dark h1 {
   color: #fff !important;
 }
 
-/* ⭐ 暗夜模式语言按钮 & 暗夜按钮 → 暗灰色背景 */
-.dark #langBtn,
-.dark #themeToggle {
+/* 人数按钮 */
+html.dark .dropdown-btn {
+  background: #333 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
+
+/* 语言按钮 */
+html.dark #langBtn,
+html.dark #themeToggle {
   background: #333 !important;
   color: #fff !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* ⭐ 暗夜模式语言菜单背景统一为暗灰色 */
-.dark .lang-menu {
+/* 语言菜单 */
+html.dark .lang-menu {
   background: #333 !important;
-  border: none !important;
+  border-color: #555 !important;
 }
 
-/* ⭐ 暗夜模式语言选项白字 */
-.dark .lang-menu div[data-lang] {
+html.dark .lang-menu div[data-lang] {
   color: #fff !important;
 }
 
-/* ⭐ Language 标题保持灰色 */
-.dark .lang-title {
+html.dark .lang-title {
   color: #aaa !important;
   background: #333 !important;
   border-bottom: 1px solid #555 !important;
 }
 
-.dark button { background: #d62828; }
-.dark .section { border-top: 1px solid #444; }
-.dark .countdown, .dark .result { color: #ff6b6b; }
-.dark .dropdown-menu { background: #333; border-color: #555; }
-.dark .dropdown-menu div:hover { background: #222; }
-.dark .footer { color: #ccc; }
-
-/* ⭐ 开始按钮：水平 + 垂直居中 */
-#startBtn {
-  width: auto;
-  padding: 0 32px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto 0 auto;
-}
-
-/* ⭐ 暗夜模式标题文字恢复白色 */
-.dark h1 {
-  color: #fff !important;
-}
-
-/* ⭐ 暗夜模式输入框统一为暗灰色背景 + 白字 */
-.dark input[type="text"],
-.dark input[type="number"],
-.dark select,
-.dark textarea {
-  background: #333 !important;
-  color: #fff !important;
-  border-color: #555 !important;
-}
-
-/* ⭐ 暗夜模式真正覆盖整个页面 */
-.dark body {
-  background: #111 !important;
-  color: #eee !important;
-}
-
-/* ⭐ 暗夜模式标题变白 */
-.dark h1 {
-  color: #fff !important;
-}
-
-/* ⭐ 暗夜模式输入框统一暗灰色背景 + 白字 */
-.dark input[type="text"],
-.dark input[type="number"],
-.dark select {
-  background: #333 !important;
-  color: #fff !important;
-  border-color: #555 !important;
-}
-
-/* ⭐ 暗夜模式语言按钮背景暗灰色 */
-.dark #langBtn,
-.dark #themeToggle {
-  background: #333 !important;
-  color: #fff !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* ⭐ 暗夜模式语言菜单背景暗灰色 */
-.dark .lang-menu {
-  background: #333 !important;
-  border-color: #555 !important;
-}
-
-/* ⭐ 暗夜模式语言选项白字 */
-.dark .lang-menu div[data-lang] {
-  color: #fff !important;
-}
-
-/* ⭐ Language 标题灰字 */
-.dark .lang-title {
-  color: #aaa !important;
-  background: #333 !important;
-  border-bottom: 1px solid #555 !important;
-}
-
-/* ⭐ 暗夜模式输入框强制白字暗灰色底 */
-.dark input[type="text"],
-.dark input[type="number"],
-.dark #maxNumber,
-.dark #guessInput {
-  background: #333 !important;
-  color: #fff !important;
-  border-color: #555 !important;
-}
+/* 其他暗夜模式元素 */
+html.dark button { background: #d62828; }
+html.dark .section { border-top: 1px solid #444; }
+html.dark .countdown,
+html.dark .result { color: #ff6b6b; }
+html.dark .dropdown-menu { background: #333; border-color: #555; }
+html.dark .dropdown-menu div:hover { background: #222; }
+html.dark .footer { color: #ccc; }
