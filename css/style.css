@@ -319,3 +319,18 @@ button:disabled { background: #bbb; }
   justify-content: center;
   margin: 20px auto 0 auto;
 }
+
+/* ⭐ 暗夜模式标题文字恢复白色 */
+.dark h1 {
+  color: #fff !important;
+}
+
+/* ⭐ 暗夜模式输入框统一为暗灰色背景 + 白字 */
+.dark input[type="text"],
+.dark input[type="number"],
+.dark select,
+.dark textarea {
+  background: #333 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
