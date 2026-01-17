@@ -55,14 +55,13 @@ const playerDropdownMenu = document.getElementById("playerDropdownMenu");
 
 /* 更新人数显示（核心同步函数） */
 function updatePlayerCountUI() {
-  const L = LANG[currentLang];
   const count = parseInt(playerCount.value);
 
-  // 左右按钮显示
-  playerStepperLabel.textContent = `${L.playerCountLabel}${count} 人`;
+  // 左右按钮中间显示纯数字
+  playerStepperLabel.textContent = count;
 
-  // 下拉按钮显示
-  playerDropdownBtn.textContent = `${L.playerCountLabel}${count} 人 ▼`;
+  // 下拉按钮显示纯数字 + ▼
+  playerDropdownBtn.textContent = `${count} ▼`;
 }
 
 /* 左按钮 */
