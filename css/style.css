@@ -50,19 +50,25 @@ h1 {
 
 /* 圆形按钮 */
 /* ⭐ 缩小语言按钮与暗夜模式按钮 */
+/* ⭐ 新版：缩小语言按钮与暗夜按钮 */
 #langBtn,
 #themeToggle {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: #fff;
-  border: none;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  cursor: pointer;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+
+  border-radius: 50% !important;
+  font-size: 16px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  line-height: normal !important; /* ⭐ 避免图标被拉高 */
+  padding: 0 !important;
 }
 
 /* 语言菜单 */
@@ -337,16 +343,6 @@ button:disabled {
 button,
 .step-btn,
 .dropdown-btn,
-#langBtn,
-#themeToggle {
-  height: 52px !important;
-  min-height: 52px !important;
-  max-height: 52px !important;
-  line-height: 52px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
 
 /* ⭐ 强制统一所有按钮宽度（除 -/+ 按钮外） */
 button:not(.step-btn),
@@ -390,11 +386,23 @@ input[type="number"] {
   transform: none !important;
 }
 
+/* ⭐ 开始按钮：水平 + 垂直居中 */
 #startBtn {
-  width: auto !important;        /* 不要占满整行 */
-  padding-left: 32px;
-  padding-right: 32px;           /* 让按钮更好看 */
-  display: block !important;
-  margin: 20px auto 0 auto !important;  /* ⭐ 水平居中 */
-}
+  width: auto !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
 
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+
+  display: flex !important;
+  align-items: center !important;   /* ⭐ 垂直居中 */
+  justify-content: center !important; /* ⭐ 水平居中 */
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 20px !important;
+
+  line-height: normal !important; /* ⭐ 避免文字被拉高 */
+}
