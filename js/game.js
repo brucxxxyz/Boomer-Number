@@ -221,6 +221,9 @@ document.getElementById("restartBtn").onclick = () => {
   end.classList.add("hidden");
 
   maxNumber.value = 50;
+  
+  guessBtn.disabled = false;
+  guessInput.disabled = false;
 
   updatePlayerCountUI();
   renderNameInputs();
