@@ -32,7 +32,7 @@ body {
 h1 {
   text-align: center;
   margin-top: 0;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: #d62828;
   margin-bottom: 10px;
@@ -121,7 +121,7 @@ h1 {
 }
 
 #maxNumber {
-  font-size: 26px;       /* ⭐ 字体更大 */
+  font-size: 24px;       /* ⭐ 字体更大 */
   font-weight: bold;     /* ⭐ 更醒目 */
   text-align: center;    /* ⭐ 居中 */
 }
@@ -150,7 +150,7 @@ input[type="number"] {
 
 /* ⭐ 输入数字更大字体 */
 #guessInput {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
