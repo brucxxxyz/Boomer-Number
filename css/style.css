@@ -381,3 +381,13 @@ button:disabled { background: #bbb; }
   background: #333 !important;
   border-bottom: 1px solid #555 !important;
 }
+
+/* ⭐ 暗夜模式输入框强制白字暗灰色底 */
+.dark input[type="text"],
+.dark input[type="number"],
+.dark #maxNumber,
+.dark #guessInput {
+  background: #333 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
